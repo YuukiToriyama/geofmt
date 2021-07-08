@@ -1,0 +1,29 @@
+{
+	"name": "geofmt",
+	"version": "0.0.1",
+	"description": "geofmt is a tool for normalizing addresses of japan",
+	"main": "dist/main.js",
+	"scripts": {
+		"build": "tsc",
+		"test": "jest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/YUUKIToriyama/geofmt.git"
+	},
+	"keywords": [
+		"japanese"
+	],
+	"author": "YUUKIToriyama <github@toriyama.dev>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/YUUKIToriyama/geofmt/issues"
+	},
+	"homepage": "https://github.com/YUUKIToriyama/geofmt#readme",
+	"devDependencies": {
+		"@types/jest": "^26.0.24",
+		"jest": "^27.0.6",
+		"ts-jest": "^27.0.3",
+		"typescript": "^4.3.5"
+	}
+}
