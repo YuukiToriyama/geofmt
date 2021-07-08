@@ -4,7 +4,8 @@
 	"description": "geofmt is a tool for normalizing addresses of japan",
 	"main": "dist/main.js",
 	"scripts": {
-		"build": "tsc",
+		"build:types": "tsc --declaration --emitDeclarationOnly --outdir './types'",
+		"build": "parcel build --target=node src/main.ts",
 		"test": "jest"
 	},
 	"repository": {
@@ -23,6 +24,7 @@
 	"devDependencies": {
 		"@types/jest": "^26.0.24",
 		"jest": "^27.0.6",
+		"parcel-bundler": "^1.12.5",
 		"ts-jest": "^27.0.3",
 		"typescript": "^4.3.5"
 	},
