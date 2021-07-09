@@ -5,7 +5,7 @@
 	"main": "dist/main.js",
 	"scripts": {
 		"build:types": "tsc --declaration --emitDeclarationOnly --outdir './types'",
-		"build": "parcel build --target=node src/main.ts",
+		"build": "rm -rf ./dist && tsc",
 		"test": "jest"
 	},
 	"repository": {
@@ -23,12 +23,15 @@
 	"homepage": "https://github.com/YUUKIToriyama/geofmt#readme",
 	"devDependencies": {
 		"@types/jest": "^26.0.24",
+		"@types/node": "^16.0.1",
 		"jest": "^27.0.6",
-		"parcel-bundler": "^1.12.5",
 		"ts-jest": "^27.0.3",
+		"ts-node": "^10.0.0",
 		"typescript": "^4.3.5"
 	},
 	"dependencies": {
+		"@toriyama/zen2han": "^0.1.1",
 		"axios": "^0.21.1"
-	}
+	},
+	"type": "commonjs"
 }
