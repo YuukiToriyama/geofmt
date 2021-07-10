@@ -1,3 +1,4 @@
+import { zen2han } from '@toriyama/zen2han';
 import { normalizeSpelling } from './libs';
 
 export type addressDict = {
@@ -6,6 +7,13 @@ export type addressDict = {
 interface CachedRegex {
 	key: string
 	regex: RegExp
+}
+
+interface ParsedAddress {
+	prefecture: string
+	municipality: string
+	town: string
+	block: string
 }
 
 export default class Normalizer {
@@ -21,7 +29,7 @@ export default class Normalizer {
 		this.dict = _dict;
 		this.endpoint = endpoint;
 		this.regexes = this.prepareRegexes(_dict);
-		console.log(this.regexes);
+		//console.log(this.regexes);
 	}
 
 	/**
@@ -66,5 +74,11 @@ export default class Normalizer {
 			city: cityRegexes,
 			town: {}
 		}
+	}
+
+	public parse = /*async*/ (_address: string)/*: Promise<ParsedAddress>*/ => {
+		let address = zen2han(_address)
+			.replace(/　/g, ' ').replace(/ +/g, ' ');
+		return address;
 	}
 }

@@ -1,7 +1,6 @@
 import axios from 'axios';
 import Normalizer, { addressDict } from './normalizer';
 
-
 class Geofmt {
 	static async normalizer(_endpoint?: string) {
 		const endpoint = _endpoint || "https://geolonia.github.io/japanese-addresses/api/ja.json";
@@ -10,4 +9,7 @@ class Geofmt {
 	}
 }
 
-const hoge = Geofmt.normalizer();
+(async () => {
+	const normalizer = await Geofmt.normalizer();
+	console.log(normalizer.parse("ＲＥＳＩＤＥＮＣＥNAKAMURA１０５"));
+})();
